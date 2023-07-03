@@ -3,19 +3,19 @@ using backend_ecommerce.Src.Shared.Domain;
 
 namespace backend_ecommerce.src.Backoffice.Products.Domain
 {
-    public class ProductId : ValueObject
+    public class ProductPrice : ValueObject
     {
         [Required]
-        public Guid Id { get; private set; }
+        public decimal? Price { get; private set; }
 
-        public ProductId(Guid id)
+        public ProductPrice(decimal? price)
         {
-            Id = id;
+            Price = price;
         }
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            yield return Id;
+            yield return Price;
         }
     }
 }

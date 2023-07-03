@@ -1,15 +1,22 @@
-﻿namespace backend_ecommerce.src.Backoffice.Products.Domain
+﻿using backend_ecommerce.src.Shared.Domain.Aggregate;
+using System.ComponentModel.DataAnnotations;
+
+namespace backend_ecommerce.src.Backoffice.Products.Domain
 {
-    public class Product
+    public class Product : AggregateRoot
     {
-        public ProductId ProductId { get; set; }
-        public ProductName ProductName { get; set; }
+        [Required]
+        public ProductName Name { get; set; }
+        
+        [Required]
+        public ProductPrice Price { get; set; }
 
-        public Product(Guid Id, string Name)
+        public List<ProductSpecification>? Specifications { get; set; }
+
+        public Product(Guid id, string name, decimal price)
         {
-            ProductId = new ProductId(Id);
-            ProductName = new ProductName(Name);
-
+            Name = new ProductName(name);
+            Price = new ProductPrice(price);
         }
     }
 }

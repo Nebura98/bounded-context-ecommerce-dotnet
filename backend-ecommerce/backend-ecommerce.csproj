@@ -8,22 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Cucumber.Messages" Version="21.0.1" />
+    <PackageReference Include="Gherkin" Version="26.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
     <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="xunit" Version="2.4.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="apps\" />
-    <Folder Include="src\Backoffice\Products\Application\Create\" />
     <Folder Include="src\Backoffice\Products\Application\Delete\" />
     <Folder Include="src\Backoffice\Products\Application\Update\" />
     <Folder Include="src\Backoffice\Products\Application\SearchByCriteria\" />
     <Folder Include="src\Backoffice\Products\Application\FindById\" />
     <Folder Include="src\Backoffice\Shared\" />
-    <Folder Include="src\Mooc\" />
     <Folder Include="tests\" />
   </ItemGroup>
 

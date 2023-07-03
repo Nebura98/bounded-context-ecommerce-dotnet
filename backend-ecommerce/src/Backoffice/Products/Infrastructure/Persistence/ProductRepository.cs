@@ -17,7 +17,7 @@ namespace backend_ecommerce.src.Backoffice.Products.Infrastructure.Persistence
         {
             using DatabaseContext context = _contextFactory.CreateDbContext();
 
-            return await context.Products.FirstOrDefaultAsync(x => x.ProductId == productId);
+            return await context.Products.FirstOrDefaultAsync(x => x.Id == productId);
         }
 
         public Task<List<Product>> FindAll()
@@ -31,13 +31,14 @@ namespace backend_ecommerce.src.Backoffice.Products.Infrastructure.Persistence
             context.Products.Add(product);
         }
 
-        public void Delete(ProductId productId)
+        public async void Delete(ProductId productId)
         {
-            throw new NotImplementedException();
+            using DatabaseContext context = _contextFactory.CreateDbContext();
         }
 
         public void Update(Product product, ProductId productId)
         {
+            using DatabaseContext context = _contextFactory.CreateDbContext();
             throw new NotImplementedException();
         }
     }
